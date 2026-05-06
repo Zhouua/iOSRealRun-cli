@@ -1,4 +1,5 @@
 v: 3.3
+distance: 3000
 routeConfig: "HNroute.txt"
 libimobiledeviceDir: "libimobiledevice"
 imageDir: "DeveloperDiskImage"
