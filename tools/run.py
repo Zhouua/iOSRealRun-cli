@@ -52,8 +52,16 @@ def bd09Towgs84(position):
 
 # get the ditance according to the latitude and longitude
 def geodistance(p1, p2):
-    from geopy.distance import geodesic
-    return geodesic((p1["lat"],p1["lng"]),(p2["lat"],p2["lng"])).m
+    import math
+
+    radius = 6371008.8
+    lat1 = math.radians(p1["lat"])
+    lat2 = math.radians(p2["lat"])
+    d_lat = lat2 - lat1
+    d_lng = math.radians(p2["lng"] - p1["lng"])
+
+    a = math.sin(d_lat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(d_lng / 2) ** 2
+    return 2 * radius * math.asin(min(1, math.sqrt(a)))
 
 def smooth(start, end, i):
     import math
