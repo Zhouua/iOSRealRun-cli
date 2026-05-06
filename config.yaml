@@ -1,5 +1,5 @@
-v: 3.3
+v: 4.0
 distance: 3000
-routeConfig: "HNroute.txt"
+routeConfig: "ZJGroute.txt"
 libimobiledeviceDir: "libimobiledevice"
 imageDir: "DeveloperDiskImage"
